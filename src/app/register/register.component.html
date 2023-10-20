@@ -1,0 +1,164 @@
+
+<div class="span9">
+  <ul class="breadcrumb">
+  <li><a routerLink="/">Home</a> <span class="divider">/</span></li>
+  <li class="active">Registration</li>
+  </ul>
+<h3> Registration</h3>
+<div class="well">
+
+<form #registerForm="ngForm" class="form-horizontal">
+  <h4>Your personal information</h4>
+  <div class="control-group">
+  <label class="control-label">Title <sup>*</sup></label>
+  <div class="controls">
+  <select class="span1" name="title" #title="ngModel" [(ngModel)]="registerUser.title" required>
+    <option value="">-</option>
+    <option value="Mr.">Mr.</option>
+    <option value="Mrs">Mrs</option>
+    <option value="Miss">Miss</option>
+  </select>
+  <span style="color:darkred" *ngIf="title.errors?.['required'] && title.touched">* Title is required</span>
+  </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputFname1">Username <sup>*</sup></label>
+    <div class="controls">
+      <input type="text" id="inputFname1" name="username" #username="ngModel" [(ngModel)]="registerUser.userName" required>
+      <span style="color:darkred" *ngIf="username.errors?.['required'] && username.touched">* Username is required</span>
+    </div>
+   </div>
+  <div class="control-group">
+    <label class="control-label" for="inputFname1">First name <sup>*</sup></label>
+    <div class="controls">
+      <input type="text" id="inputFname1" placeholder="First Name" name="firstname" #firstname="ngModel" [(ngModel)]="registerUser.firstname" required>
+      <span style="color:darkred" *ngIf="firstname.errors?.['required'] && firstname.touched">* Firstname is required</span>
+    </div>
+   </div>
+   <div class="control-group">
+    <label class="control-label" for="inputLnam">Last name <sup>*</sup></label>
+    <div class="controls">
+      <input type="text" id="inputLnam" placeholder="Last Name" name="lastname" #lastname="ngModel" [(ngModel)]="registerUser.lastname" required>
+      <span style="color:darkred" *ngIf="lastname.errors?.['required'] && lastname.touched">* Lastname is required</span>
+    </div>
+   </div>
+
+   <div class="control-group">
+    <label class="control-label" for="inputLnam">Date Of Birth <sup>*</sup></label>
+    <div class="controls">
+      <p-calendar aria-placeholder="date Of Birth" name="dateOfBirth" #dateOfBirth="ngModel" [(ngModel)]="registerUser.dateOfBirth"></p-calendar>
+      <span style="color:darkred" *ngIf="registerUser.dateOfBirth === undefined && dateOfBirth.touched">* Date Of Birth is required</span>
+    </div>
+   </div>
+
+
+  <div class="control-group">
+  <label class="control-label" for="input_email">Email <sup>*</sup></label>
+  <div class="controls">
+    <input type="text" id="input_email" placeholder="Email" name="email" #email="ngModel" [(ngModel)]="registerUser.email" required email>
+    <span style="color:darkred" *ngIf="email.errors?.['required'] && email.touched">* Email is required</span>
+    <span style="color:darkred" *ngIf="email.errors?.['email'] && email.touched">* Please enter a valid email</span>
+  </div>
+  </div>
+<div class="control-group">
+  <label class="control-label" for="inputPassword1">Password <sup>*</sup></label>
+  <div class="controls">
+    <input type="password" id="inputPassword1" name="password" #password="ngModel" [(ngModel)]="registerUser.password" placeholder="Password" required>
+    <br>
+    <span style="color:darkred" *ngIf="!verifPassword.test(password.value) && password.touched">*Password must contain at least 1 capital letter, 1 lowercase letter, 1 digit, 1 special character, and must be of length superior to 4</span>
+    <span style="color:darkred" *ngIf="password.errors?.['required'] && password.touched">Password is required</span>
+  </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputPassword1">Password Confirmation<sup>*</sup></label>
+    <div class="controls">
+      <input type="password" id="inputPasswordConfirmation" name="passwordConfirmation" #passwordConfirmationValue="ngModel" [(ngModel)]="passwordConfirmation" placeholder="Confirm Password" required><br>
+      <span style="color:darkred" *ngIf="passwordConfirmationValue.value !== password.value && passwordConfirmationValue.touched">* Password confirmation must match Password</span><br>
+      <span style="color:darkred" *ngIf="passwordConfirmationValue.errors?.['required'] && passwordConfirmationValue.touched">* Password Confirmation is required</span>
+    </div>
+    </div>
+
+  <h4>Your address</h4>
+
+  <div class="control-group">
+    <label class="control-label" for="address">Address<sup>*</sup></label>
+    <div class="controls">
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="address2">Address (Line 2)<sup>*</sup></label>
+    <div class="controls">
+      <input type="text" id="address2" placeholder="Adress line 2"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="city">City<sup>*</sup></label>
+    <div class="controls">
+      <input type="text" id="city" placeholder="city"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="state">State<sup>*</sup></label>
+    <div class="controls">
+      <select id="state">
+      <option value="">-</option>
+      <option value="1">Alabama</option><option value="2">Alaska</option><option value="3">Arizona</option><option value="4">Arkansas</option><option value="5">California</option><option value="6">Colorado</option><option value="7">Connecticut</option><option value="8">Delaware</option><option value="53">District of Columbia</option><option value="9">Florida</option><option value="10">Georgia</option><option value="11">Hawaii</option><option value="12">Idaho</option><option value="13">Illinois</option><option value="14">Indiana</option><option value="15">Iowa</option><option value="16">Kansas</option><option value="17">Kentucky</option><option value="18">Louisiana</option><option value="19">Maine</option><option value="20">Maryland</option><option value="21">Massachusetts</option><option value="22">Michigan</option><option value="23">Minnesota</option><option value="24">Mississippi</option><option value="25">Missouri</option><option value="26">Montana</option><option value="27">Nebraska</option><option value="28">Nevada</option><option value="29">New Hampshire</option><option value="30">New Jersey</option><option value="31">New Mexico</option><option value="32">New York</option><option value="33">North Carolina</option><option value="34">North Dakota</option><option value="35">Ohio</option><option value="36">Oklahoma</option><option value="37">Oregon</option><option value="38">Pennsylvania</option><option value="51">Puerto Rico</option><option value="39">Rhode Island</option><option value="40">South Carolina</option><option value="41">South Dakota</option><option value="42">Tennessee</option><option value="43">Texas</option><option value="52">US Virgin Islands</option><option value="44">Utah</option><option value="45">Vermont</option><option value="46">Virginia</option><option value="47">Washington</option><option value="48">West Virginia</option><option value="49">Wisconsin</option><option value="50">Wyoming</option>
+    </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="postcode">Zip / Postal Code<sup>*</sup></label>
+    <div class="controls">
+      <input type="text" id="postcode" placeholder="Zip / Postal Code" name="zipPostalCode" #zipPostalCode="ngModel" [(ngModel)]="registerUser.zipPostalCode"/>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="country">Country<sup>*</sup></label>
+    <div class="controls">
+    <select id="country">
+      <option value="">-</option>
+      <option value="USA">USA</option>
+      <option value="Canada">Canada</option>
+    </select>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="aditionalInfo">Additional information</label>
+    <div class="controls">
+      <textarea name="aditionalInfo" id="aditionalInfo" cols="26" rows="3">Additional information</textarea>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="phone">Home phone <sup>*</sup></label>
+    <div class="controls">
+      <input type="text"  id="phone" placeholder="phone"/> <span>&nbsp;&nbsp;You must register at least one phone number</span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="mobile">Mobile Phone </label>
+    <div class="controls">
+      <input type="text" id="mobile" placeholder="Mobile Phone"/>
+
+    </div>
+  </div>
+
+<p><sup>*</sup>Required field	</p>
+
+<div class="control-group">
+    <div class="controls">
+      <input type="hidden" name="email_create" value="1">
+      <input type="hidden" name="is_new_customer" value="1">
+      <button class="btn btn-large btn-success" type="submit" value="Register">Register</button>
+    </div>
+  </div>
+</form>
+</div>
+
+</div>
+
+
+

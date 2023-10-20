@@ -1,0 +1,53 @@
+<!-- Navbar ================================================== -->
+<div id="logoArea" class="navbar">
+  <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+    <div class="navbar-inner">
+      <a class="brand" ><img src="/assets/themes/images/logo.png" alt="Bootsshop"/></a>
+
+      <ul id="topMenu" class="nav pull-right">
+     <li class=""><a routerLink="/contact" style="color:rgb(213, 209, 209)">Contact</a></li>
+     <li *ngIf="!menuDisplay" class=""><a routerLink="/register">Register</a></li>
+     <li class="">
+     <a role="button" *ngIf="!menuDisplay" (click)="displayLoginModal()" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
+     <a role="button" *ngIf="menuDisplay" (click)="logout()" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-error">Logout</span></a>
+
+
+     <div id="login" [style]="showLoginModal ? 'display:block' : 'display:none'" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
+        <div class="modal-header">
+        <button type="button" (click)="showLoginModal = false" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+        <h3>Login Block</h3>
+        </div>
+        <div class="modal-body">
+
+        <form #loginForm="ngForm" (ngSubmit)="login()" class="form-horizontal loginFrm" autocomplete="off">
+          <div class="control-group">
+          <input type="text" name="emailOrUserName" [(ngModel)]="loginUser.emailOrUserName" #emailOrUserName="ngModel" placeholder="Email" required autocomplete="off">
+          <span style="color:darkred" *ngIf="emailOrUserName.errors?.['required'] && emailOrUserName.touched">&nbsp;&nbsp;&nbsp;*Email or username is required</span>
+          </div>
+
+          <div class="control-group">
+          <input type="password" [(ngModel)]="loginUser.password" #password="ngModel" name="password" placeholder="Password" required autocomplete="off">
+          <span style="color:darkred" *ngIf="password.errors?.['required'] && password.touched">&nbsp;&nbsp;&nbsp;*Password is required to log in</span>
+          </div>
+          <div class="control-group">
+          <label class="checkbox">
+          <input type="checkbox"> Remember me
+          </label>
+          </div>
+        </form>
+        <button type="submit" (click)="login()" class="btn btn-success">Sign in</button>
+        <button class="btn" (click)="showLoginModal = false" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+    </li>
+      </ul>
+    </div>
+  </div>
+
+
+<p-toast key="loginSuccess" [life]="5000"></p-toast>
+<p-toast key="loginFailure" [life]="5000"></p-toast>
