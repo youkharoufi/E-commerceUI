@@ -1,4 +1,7 @@
 
+<p-toast key="registerSuccess" [life]="5000"></p-toast>
+<p-toast key="RegisterFailure" [life]="5000"></p-toast>
+
 <div class="span9">
   <ul class="breadcrumb">
   <li><a routerLink="/">Home</a> <span class="divider">/</span></li>
@@ -159,7 +162,7 @@
     <div class="controls">
       <input type="hidden" name="email_create" value="1">
       <input type="hidden" name="is_new_customer" value="1">
-      <button class="btn btn-large btn-success" [disabled]="registerForm.invalid" type="submit" value="Register">Register</button>
+      <button class="btn btn-large btn-success" (click)="register()" [disabled]="registerForm.invalid" type="submit" value="Register">Register</button>
     </div>
   </div>
 </form>

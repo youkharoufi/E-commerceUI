@@ -1,0 +1,34 @@
+#featuredProducts .thumbnail {
+  height: 300px;
+  width: 170px;
+}
+
+#latestProducts .thumbnail {
+  height: 300px;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+}
+
+.thumbnail {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.thumbnail .caption {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  #latestProducts .thumbnail {
+    height: 400px;
+  }
+}

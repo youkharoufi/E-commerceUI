@@ -46,13 +46,13 @@ export class NavbarComponent {
         this.messageService.add({key:"loginSuccess", severity: 'success', summary: 'Success', detail: 'You have been logged in successfully' });
         setTimeout(()=>{
           window.location.reload()
-        },4000);
+        },2000);
       },
       error:()=>{
         this.messageService.add({key:"loginFailure", severity: 'error', summary: 'Error', detail: 'Invalid credentials could not login' });
         setTimeout(()=>{
           window.location.reload()
-        },4000)
+        },2000)
       }
     })
   }

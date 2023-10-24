@@ -16,10 +16,16 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { RegisterComponent } from './register/register.component';
 import { CalendarModule } from 'primeng/calendar';
+import { CarouselModule } from 'primeng/carousel';
+import { PaginatorModule } from 'primeng/paginator';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes : Route[] = [
   {path:'', component: IndexComponent},
-  {path:'register', component: RegisterComponent}
+  {path:'register', component: RegisterComponent},
+  {path:'product-details/:id', component: ProductDetailsComponent},
+  {path:'cart/:id', component: CartComponent}
 ]
 
 @NgModule({
@@ -30,7 +36,9 @@ const routes : Route[] = [
     SidebarComponent,
     FooterComponent,
     IndexComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +48,9 @@ const routes : Route[] = [
     FormsModule,
     BrowserAnimationsModule,
     ToastModule,
-    CalendarModule
+    CalendarModule,
+    CarouselModule,
+    PaginatorModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
