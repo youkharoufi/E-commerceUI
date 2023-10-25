@@ -20,12 +20,14 @@ import { CarouselModule } from 'primeng/carousel';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes : Route[] = [
   {path:'', component: IndexComponent},
   {path:'register', component: RegisterComponent},
   {path:'product-details/:id', component: ProductDetailsComponent},
-  {path:'cart/:id', component: CartComponent}
+  {path:'cart/:id', component: CartComponent},
+  {path:'contact', component: ContactComponent}
 ]
 
 @NgModule({
@@ -38,7 +40,8 @@ const routes : Route[] = [
     IndexComponent,
     RegisterComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

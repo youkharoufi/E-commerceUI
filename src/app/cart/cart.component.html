@@ -1,5 +1,6 @@
 
-<p-toast key="deleteCartItem" [life]="5000"></p-toast>
+<p-toast key="deletionSuccess" [life]="5000"></p-toast>
+<p-toast key="deletionError" [life]="5000"></p-toast>
 
 	<div class="span9">
 
@@ -31,7 +32,7 @@
 				  <td>
 					<div style="text-align: center;" class="input-append">
 
-            <input class="span1" style="max-width:64px;" (input)="onQuantityChange($event, item)" [value]="item.itemQuantity" name="quantity" id="appendedInputButtons" size="16" type="number">
+            <input class="span1" style="max-width:64px;" (input)="onQuantityChange($event, item)" [(ngModel)]="item.itemQuantity" (ngModelChange)="validateValue(item)" name="quantity" id="appendedInputButtons" size="16" type="number">
 
             <button class="pi pi-arrow-up" (click)="incrementQuantity(item)" style="color: green"></button>
             <button class="pi pi-arrow-down" (click)="decrementQuantity(item)" style="color: red"></button>
@@ -43,7 +44,7 @@
 
                 <tr>
                   <td colspan="6" style="text-align:right">Total Price:	</td>
-                  <td>${{total}}</td>
+                  <td *ngIf="total">${{total}}</td>
                 </tr>
 
 				</tbody>
