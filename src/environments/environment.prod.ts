@@ -1,4 +1,4 @@
 export const environent = {
   production: true,
-  baseUrl: "https://localhost:7205/"
+  baseUrl: "https://youssef-bshop.azurewebsites.net/"
 }
