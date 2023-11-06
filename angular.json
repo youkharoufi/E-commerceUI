@@ -25,23 +25,23 @@
               "src/assets"
             ],
             "styles": [
-              "./src/assets/bootstrap/css/bootstrap.min.css",
+              "assets/bootstrap/css/bootstrap.min.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "./src/assets/themes/bootshop/bootstrap.min.css",
-              "./src/assets/themes/css/base.css",
-              "./src/assets/themes/css/bootstrap-responsive.min.css",
-              "./src/assets/themes/css/font-awesome.css",
-              "./src/assets/themes/js/google-code-prettify/prettify.css"
+              "assets/themes/bootshop/bootstrap.min.css",
+              "assets/themes/css/base.css",
+              "assets/themes/css/bootstrap-responsive.min.css",
+              "assets/themes/css/font-awesome.css",
+              "assets/themes/js/google-code-prettify/prettify.css"
 
             ],
             "scripts": [
-              "./src/assets/bootstrap/js/bootstrap.min.js",
-              "./src/assets/themes/js/jquery.js",
-              "./src/assets/themes/js/bootstrap.min.js",
-              "./src/assets/themes/js/google-code-prettify/prettify.js",
-              "./src/assets/themes/js/bootshop.js",
-              "./src/assets/themes/js/jquery.lightbox-0.5.js"
+              "assets/bootstrap/js/bootstrap.min.js",
+              "assets/themes/js/jquery.js",
+              "assets/themes/js/bootstrap.min.js",
+              "assets/themes/js/google-code-prettify/prettify.js",
+              "assets/themes/js/bootshop.js",
+              "assets/themes/js/jquery.lightbox-0.5.js"
             ]
           },
           "configurations": {
