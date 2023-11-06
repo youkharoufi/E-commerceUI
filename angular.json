@@ -22,26 +22,26 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "../E-commerceUI/assets"
             ],
             "styles": [
-              "./src/assets/bootstrap/css/bootstrap.min.css",
+              "../E-commerceUI/assets/bootstrap/css/bootstrap.min.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "./src/assets/themes/bootshop/bootstrap.min.css",
-              "./src/assets/themes/css/base.css",
-              "./src/assets/themes/css/bootstrap-responsive.min.css",
-              "./src/assets/themes/css/font-awesome.css",
-              "./src/assets/themes/js/google-code-prettify/prettify.css"
+              "../E-commerceUI/assets/themes/bootshop/bootstrap.min.css",
+              "../E-commerceUI/assets/themes/css/base.css",
+              "../E-commerceUI/assets/themes/css/bootstrap-responsive.min.css",
+              "../E-commerceUI/assets/themes/css/font-awesome.css",
+              "../E-commerceUI/assets/themes/js/google-code-prettify/prettify.css"
 
             ],
             "scripts": [
-              "./src/assets/bootstrap/js/bootstrap.min.js",
-              "./src/assets/themes/js/jquery.js",
-              "./src/assets/themes/js/bootstrap.min.js",
-              "./src/assets/themes/js/google-code-prettify/prettify.js",
-              "./src/assets/themes/js/bootshop.js",
-              "./src/assets/themes/js/jquery.lightbox-0.5.js"
+              "../E-commerceUI/assets/bootstrap/js/bootstrap.min.js",
+              "../E-commerceUI/assets/themes/js/jquery.js",
+              "../E-commerceUI/assets/themes/js/bootstrap.min.js",
+              "../E-commerceUI/assets/themes/js/google-code-prettify/prettify.js",
+              "../E-commerceUI/assets/themes/js/bootshop.js",
+              "../E-commerceUI/assets/themes/js/jquery.lightbox-0.5.js"
             ]
           },
           "configurations": {
